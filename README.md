@@ -1,6 +1,6 @@
 # Pomodoro Timer for learn-with-me streams
 
-![Picture showing the website on launch.](ressources\pp-screenshot.png)
+![Picture showing the website on launch.](https://github.com/muederotter/petitepomodoro/blob/main/ressources/pp-screenshot.png)
 
 ## About the Project
 This is a small and customizable pomodoro timer that you can integrate into OBS Studio. Feel free to use it in your next learn-with-me stream!
