@@ -12,7 +12,15 @@ function Timer() {
   const timerFont = urlParams.get('timerFont') || 'VT323';
   const sessionFont = urlParams.get('sessionFont') || 'VT323';
   const alignment = urlParams.get('alignment') || 'left';
+  const focussound = ('botw_new_item.mp3')
+  const breaksound = ('botw_spirit_orb.mp3')
+      
 
+    function playSound() {
+        focussound.currentTime = 0; // Reset the audio to the beginning
+        timerSound.play();
+    }
+                    
   // State variables
   const [timeLeft, setTimeLeft] = useState(focusDuration);
   const [intervalId, setIntervalId] = useState(null);
@@ -31,6 +39,7 @@ function Timer() {
 
   useEffect(() => {
     if (timeLeft < 0) {
+      playSound ('focussound')
       clearInterval(intervalId);
       if (label === 'Get ready') {
         setLabel('Focus');
@@ -38,6 +47,7 @@ function Timer() {
         setIntervalId(setInterval(tick, 1000));
       } else if (label === 'Focus') {
         if (reps > 1) {
+          playSound ('focussound')
           setLabel('Break');
           setTimeLeft(breakDuration);
           setReps((prevReps) => prevReps - 1);
@@ -63,6 +73,7 @@ function Timer() {
       setLabel('Get ready');
       setTimeLeft(10);
       setIntervalId(setInterval(tick, 1000));
+       
     }
   };
 
@@ -87,6 +98,7 @@ function Timer() {
         onClick={handleClick}
       >
         {label === 'Well' ? 'DONE!' : updateTimer()}
+          playSound('breaksound')
       </p>
     </div>
   );
