@@ -27,7 +27,7 @@ function App() {
 
   // Function to update the preview and link
   useEffect(() => {
-    const updatedLink = `https://muederotter.github.io/petitepomodoro/#/timer?focus=${focus}&break=${breakTime}&reps=${reps}&color=${encodeURIComponent(color)}&timerFont=${encodeURIComponent(timerFont)}&sessionFont=${encodeURIComponent(sessionFont)}&alignment=${alignment}`;
+    const updatedLink = `https://earlgreyrosetea.github.io/petitepomodoro/#/timer?focus=${focus}&break=${breakTime}&reps=${reps}&color=${encodeURIComponent(color)}&timerFont=${encodeURIComponent(timerFont)}&sessionFont=${encodeURIComponent(sessionFont)}&alignment=${alignment}`;
     setLink(updatedLink);
   }, [focus, breakTime, reps, color, sessionFont, timerFont, alignment]);
 
